@@ -5,6 +5,7 @@ Needs python, pygame
 
 IMPORTANT! Copy img directory to dist folder with main.exe for run it under window$.
 
+The module "py2exe" only work for Python version<3.11 (2024/12/3). So I would use pyinstaller instead. 
 
 TODO:
 

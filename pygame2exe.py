@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
  
 try:
-    from distutils.core import setup
-    import py2exe, pygame
+    from setuptools import setup
+    import py2exe
+    import pygame
     from modulefinder import Module
-    import glob, fnmatch
-    import sys, os, shutil
+    import glob
+    import fnmatch
+    import sys
+    import os
+    import shutil
     import operator
-except ImportError, message:
-    raise SystemExit,  "Unable to load module. %s" % message
+except ImportError as message:
+    raise SystemExit("Unable to load module. %s" % message)
  
 #hack which fixes the pygame mixer and pygame font
 origIsSystemDLL = py2exe.build_exe.isSystemDLL # save the orginal before we edit it
@@ -158,4 +162,4 @@ if __name__ == '__main__':
     if operator.lt(len(sys.argv), 2):
         sys.argv.append('py2exe')
     BuildExe().run() #Run generation
-    raw_input("Press any key to continue") #Pause to let user see that things ends 
+    input("Press any key to continue") #Pause to let user see that things ends 
